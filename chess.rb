@@ -1,5 +1,6 @@
 #!/usr/bin/ruby -w
 
+# provides string coloring functionality
 class String
     def black;          "\e[30m#{self}\e[0m" end
     def red;            "\e[31m#{self}\e[0m" end
@@ -163,6 +164,9 @@ class Game
             return
         end
         
+        col = args[1]
+        row = args[2]
+        
         # increment the turn counter
         @turn += 1
     end
@@ -171,7 +175,7 @@ class Game
         puts(@boardDim)
         
         # print first row of labels
-        print("    1   2   3   4   5   6   7   8\n")
+        print("    a   b   c   d   e   f   g   h\n")
         # iterate over twice as many rows as boardDim as every second row is a line
         for y in 0 .. (@boardDim * 2) do
             # print the y labels only on odd rows, otherwise print a space to keep correct formatting
@@ -196,7 +200,7 @@ class Game
             end
             print("\n")
         end
-        print("    1   2   3   4   5   6   7   8\n")
+        print("    a   b   c   d   e   f   g   h\n")
     end
 end
 
